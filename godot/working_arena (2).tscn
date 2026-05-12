@@ -5,6 +5,7 @@
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_0yjnm"]
 friction = 0.0
+bounce = 0.11
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_0xm2m"]
 a = Vector2(223, -184)

@@ -4,7 +4,7 @@ extends RigidBody2D
 @export var death_zone := 2.0
 @export var wall_spin_drain := 0.02  # angular velocity lost per unit of impact speed
 @export var top_spin_drain := 0.15  # fraction of total spin lost on top-top hit
-@export var collision_knockback := 500.0
+@export var collision_knockback := 50.0
 var is_live = false
 @onready var animation = %AnimationPlayer
 var should_log = false
@@ -46,13 +46,12 @@ func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
                 var my_loss := total * top_spin_drain * (their_speed / total)
                 state.angular_velocity -= signf(state.angular_velocity) * my_loss
                 var away := (global_position - other.global_position).normalized()
-                var scaler = 10.0
+                # var scaler = 2.0
                 state.linear_velocity += (
-                    away * collision_knockback * (their_speed / my_speed) * scaler
+                    away * collision_knockback * (my_speed / (their_speed + 1.0))
                 )
-                animation.play("hit")
-                print("hit player")
-                collision_player.play()
+                animation.play.call_deferred("hit")
+                collision_player.play.call_deferred()
 
 
 func _physics_process(_delta: float) -> void:
@@ -85,6 +84,7 @@ func _process(_delta: float) -> void:
         print("OFFSCREEN")
         is_live = false
         die.emit()
+        freeze = true
 
 
 func set_color(color: Color) -> void:
