@@ -23,35 +23,35 @@ func _ready() -> void:
 	add_child(fuck_with_timer)
 
 
-func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
-	if is_live:
-		for i in state.get_contact_count():
-			var collider = state.get_contact_collider_object(i)
-			if collider == null:
-				continue
-			var normal := state.get_contact_local_normal(i)
-			var impact := absf(state.linear_velocity.dot(normal))
+# func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
+# 	if is_live:
+# 		for i in state.get_contact_count():
+# 			var collider = state.get_contact_collider_object(i)
+# 			if collider == null:
+# 				continue
+# 			var normal := state.get_contact_local_normal(i)
+# 			var impact := absf(state.linear_velocity.dot(normal))
 
-			if collider is StaticBody2D:
-				var drain := impact * wall_spin_drain
-				state.angular_velocity -= signf(state.angular_velocity) * drain
-				animation.play("hit")
-			elif collider is RigidBody2D:
-				var other := collider as RigidBody2D
-				var my_speed := absf(state.angular_velocity)
-				var their_speed := absf(other.angular_velocity)
-				var total := my_speed + their_speed
-				if total == 0.0:
-					continue
-				var my_loss := total * top_spin_drain * (their_speed / total)
-				state.angular_velocity -= signf(state.angular_velocity) * my_loss
-				var away := (global_position - other.global_position).normalized()
-				# var scaler = 2.0
-				state.linear_velocity += (
-					away * collision_knockback * (my_speed / (their_speed + 1.0))
-				)
-				animation.play.call_deferred("hit")
-				collision_player.play.call_deferred()
+# 			if collider is StaticBody2D:
+# 				var drain := impact * wall_spin_drain
+# 				state.angular_velocity -= signf(state.angular_velocity) * drain
+# 				animation.play("hit")
+# 			elif collider is RigidBody2D:
+# 				var other := collider as RigidBody2D
+# 				var my_speed := absf(state.angular_velocity)
+# 				var their_speed := absf(other.angular_velocity)
+# 				var total := my_speed + their_speed
+# 				if total == 0.0:
+# 					continue
+# 				var my_loss := total * top_spin_drain * (their_speed / total)
+# 				state.angular_velocity -= signf(state.angular_velocity) * my_loss
+# 				var away := (global_position - other.global_position).normalized()
+# 				# var scaler = 2.0
+# 				state.linear_velocity += (
+# 					away * collision_knockback * (my_speed / (their_speed + 1.0))
+# 				)
+# 				animation.play.call_deferred("hit")
+# 				collision_player.play.call_deferred()
 
 
 func _physics_process(_delta: float) -> void:
