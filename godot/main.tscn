@@ -22,3 +22,6 @@ autoplay = true
 stream = ExtResource("4_1bvp3")
 volume_db = 13.42
 pitch_scale = 3.9
+
+[node name="WinPlayer" type="AudioStreamPlayer2D" parent="." unique_id=188573983]
+volume_db = 11.762
