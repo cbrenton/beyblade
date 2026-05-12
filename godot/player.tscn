@@ -59,7 +59,7 @@ script = ExtResource("1_onrkg")
 pull_factor = 800.0
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1947290124]
-scale = Vector2(0.8125, 0.8076077)
+scale = Vector2(0.4, 0.398)
 texture = ExtResource("1_4flbx")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1102566575]

@@ -8,10 +8,16 @@ extends RigidBody2D
 var is_live = false
 @onready var animation = %AnimationPlayer
 var should_log = false
+@onready var fuck_with_timer := Timer.new()
 
 
 func _ready() -> void:
-    pass
+    var n := randi() % 42 + 1
+    get_node("Sprite2D").texture = load("res://assets/beys/%d.png" % n)
+    fuck_with_timer.wait_time = 1.5
+    fuck_with_timer.one_shot = false
+    fuck_with_timer.timeout.connect(fuck_with)
+    add_child(fuck_with_timer)
 
 
 func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
@@ -65,6 +71,8 @@ func launch(initial_spin: float) -> void:
     can_sleep = false
     angular_velocity = initial_spin
     print("launching")
+    # new timer
+    fuck_with_timer.start()
 
 
 func _process(_delta: float) -> void:
@@ -76,4 +84,11 @@ func _process(_delta: float) -> void:
 
 
 func set_color(color: Color) -> void:
-    get_node("Sprite2D").modulate = color
+    # get_node("Sprite2D").modulate = color
+    pass
+
+
+func fuck_with() -> void:
+    var rand_vector = Vector2(randf_range(0.0, 200.0), randf_range(0.0, 200.0))
+    apply_central_force(rand_vector)
+    print(rand_vector)
