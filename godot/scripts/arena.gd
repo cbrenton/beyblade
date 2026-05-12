@@ -1,5 +1,9 @@
 extends StaticBody2D
 
+const WARMUP_SEC := 10.0
+const RESULTS_SEC := 5.0
+const SPIN_INSTRUCTION := "START SPINNING DUDES YOU'VE ONLY GOT 10 SECONDS"
+
 @export var radius: float = 100.0
 @export var segments: int = 64
 
@@ -7,6 +11,16 @@ extends StaticBody2D
 
 var scene_center = Vector2.ZERO
 var players = []
+
+enum _Overlay { SPINNING, READY_FOR_BATTLE, OFF }
+var _overlay_phase: _Overlay = _Overlay.OFF
+var _warmup_left := WARMUP_SEC
+var _results_left := RESULTS_SEC
+var _p1_spins := 0
+var _p2_spins := 0
+var _overlay_layer: CanvasLayer
+var _countdown_label: Label
+var _instruction_label: Label
 
 
 func _ready() -> void:
@@ -23,12 +37,73 @@ func _ready() -> void:
         col.shape = seg
         add_child(col)
 
+    _overlay_layer = CanvasLayer.new()
+    _overlay_layer.layer = 100
+    add_child(_overlay_layer)
+    var backdrop := ColorRect.new()
+    backdrop.color = Color(0, 0, 0, 0.55)
+    backdrop.set_anchors_preset(Control.PRESET_FULL_RECT)
+    backdrop.mouse_filter = Control.MOUSE_FILTER_IGNORE
+    _overlay_layer.add_child(backdrop)
+    var center := CenterContainer.new()
+    center.set_anchors_preset(Control.PRESET_FULL_RECT)
+    center.mouse_filter = Control.MOUSE_FILTER_IGNORE
+    _overlay_layer.add_child(center)
+    var vbox := VBoxContainer.new()
+    vbox.add_theme_constant_override("separation", 16)
+    center.add_child(vbox)
+    _countdown_label = Label.new()
+    _countdown_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+    _countdown_label.add_theme_font_size_override("font_size", 56)
+    _countdown_label.add_theme_color_override("font_color", Color.WHITE)
+    vbox.add_child(_countdown_label)
+    _instruction_label = Label.new()
+    _instruction_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+    _instruction_label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+    _instruction_label.custom_minimum_size = Vector2(520, 0)
+    _instruction_label.add_theme_font_size_override("font_size", 18)
+    _instruction_label.add_theme_color_override("font_color", Color.WHITE)
+    _instruction_label.text = SPIN_INSTRUCTION
+    vbox.add_child(_instruction_label)
+
+    _overlay_phase = _Overlay.SPINNING
+    _warmup_left = WARMUP_SEC
+    _countdown_label.text = "%.1f" % _warmup_left
+
+
+func _process(delta: float) -> void:
+    match _overlay_phase:
+        _Overlay.SPINNING:
+            if _warmup_left > 0.0:
+                _p1_spins += absi(RCadeInput.p1_spinner_delta())
+                _p2_spins += absi(RCadeInput.p2_spinner_delta())
+            _warmup_left -= delta
+            if _warmup_left > 0.0:
+                _countdown_label.text = "%.1f" % _warmup_left
+            else:
+                _warmup_left = 0.0
+                _overlay_phase = _Overlay.READY_FOR_BATTLE
+                _results_left = RESULTS_SEC
+                _instruction_label.visible = false
+                _countdown_label.add_theme_font_size_override("font_size", 28)
+                _countdown_label.text = "P1: %d spins\nP2: %d spins" % [_p1_spins, _p2_spins]
+        _Overlay.READY_FOR_BATTLE:
+            _results_left -= delta
+            if _results_left <= 0.0:
+                _overlay_phase = _Overlay.OFF
+                _overlay_layer.queue_free()
+                _overlay_layer = null
+        _:
+            pass
+
 
 func _draw() -> void:
     draw_arc(Vector2.ZERO, radius, 0, TAU, segments, Color.WHITE, 2.0)
 
 
 func _input(event: InputEvent) -> void:
+    if _overlay_phase != _Overlay.OFF:
+        return
     if event is InputEventKey and event.pressed:
         if event.keycode == KEY_SPACE:
             print("space was pressed")
