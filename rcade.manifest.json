@@ -1,7 +1,7 @@
 {
   "$schema": "https://rcade.dev/manifest.schema.json",
-  "name": "beyblade",
-  "display_name": "Beyblade",
+  "name": "spring-2-2026-blades",
+  "display_name": "Spring 2 2026 Blades",
   "description": "Let it rip!",
   "visibility": "public",
   "authors": [{ "display_name": "Chris Brenton" }],
