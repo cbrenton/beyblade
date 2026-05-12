@@ -124,7 +124,7 @@ func _process(delta: float) -> void:
                             player.launch.call_deferred(0)
                         player.freeze = false
                         print("launch[%d]: %f" % [count, spins[count]])
-                        player.launch.call_deferred(100 * spins[count] * -1)  # extra 10x bc I can't spin fast on here
+                        player.launch.call_deferred(10 * spins[count] * -1)  # extra 10x bc I can't spin fast on here
                         count += 1
             _:
                 pass
