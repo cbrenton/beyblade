@@ -30,6 +30,7 @@ var _instruction_label: Label
 @onready var lose_sfx = preload("res://assets/sounds/loser.mp3")
 
 var is_over = false
+@export var win_label: Label
 
 
 func _ready() -> void:
@@ -142,6 +143,8 @@ func p2_win() -> void:
     win_player.stream = win_sfx
     win_player.play()
     is_over = true
+    win_label.show()
+    win_label.text = "P2 WINS"
 
 
 func p1_win() -> void:
@@ -152,3 +155,5 @@ func p1_win() -> void:
     win_player.stream = win_sfx
     win_player.play()
     is_over = true
+    win_label.show()
+    win_label.text = "P1 WINS"
