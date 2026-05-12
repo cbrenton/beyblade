@@ -1,9 +1,14 @@
 63f7b34db8d8cdea90c76aacccf841ec
-::res://::1778602622
+::res://::1778604760
 export_presets.cfg::TextFile::-1::1778602523::0::1::::<><><>0<>0<><>::
 icon.svg::CompressedTexture2D::1913753471732085146::1778602516::1778602566::1::::<><><>0<>0<>eddf2b290c72a11e0674fa6eb160ac05<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
-main.gd::GDScript::616197555254481351::1778602537::0::1::::<>Node2D<><>0<>0<><>::
-main.tscn::PackedScene::2350174299237856::1778602579::0::1::::<><><>0<>0<><>::uid://i1qximo471nv::::res://main.gd
+main.tscn::PackedScene::2350174299237856::1778604538::0::1::::<><><>0<>0<><>::uid://dacit4gmvaj2u::::res://scripts/arena.gd<>uid://cddroomufyrne::::res://player.tscn
+player.tscn::PackedScene::4990658976335085586::1778604521::0::1::::<><><>0<>0<><>::
 ::res://addons/::1778601824
 ::res://addons/rcade/::1778602566
 rcade_input.gd::GDScript::8601570341232054530::1778601887::0::1::::<>Node<><>0<>0<><>::
+::res://assets/::1778604793
+top.png::CompressedTexture2D::8016209527133009419::1778604839::1778604841::1::::<><><>0<>0<>6165c35c09362ba5d490396ccb4b79dd<>res://.godot/imported/top.png-71f42050df5ce65e470fc5e218b1f8f7.ctex::
+::res://scripts/::1778604660
+arena.gd::GDScript::7163912005633027614::1778604660::0::1::::<>StaticBody2D<><>0<>0<><>::
+test.gd::GDScript::616197555254481351::1778602537::0::1::::<>Node2D<><>0<>0<><>::

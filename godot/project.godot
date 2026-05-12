@@ -26,14 +26,18 @@ RCadeInput="*res://addons/rcade/rcade_input.gd"
 
 [display]
 
-window/size/viewport_width=480
-window/size/viewport_height=270
+window/size/viewport_width=720
+window/size/viewport_height=480
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 
 [dotnet]
 
 project/assembly_name="Beyblade"
+
+[physics]
+
+2d/default_angular_damp=0.0
 
 [rendering]
 
