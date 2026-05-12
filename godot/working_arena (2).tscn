@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://lu8pufe4b3r"]
+
+[ext_resource type="Script" uid="uid://bk4sao1xwrmf3" path="res://scripts/arena_new.gd" id="1_s2yy1"]
+[ext_resource type="Texture2D" uid="uid://comsp8mdmkhov" path="res://assets/hex_arena.png" id="2_dj1tk"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_0yjnm"]
+friction = 0.0
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_0xm2m"]
+a = Vector2(223, -184)
+b = Vector2(222, 174)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_h2yge"]
+a = Vector2(-35, -280)
+b = Vector2(259, -110)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_1bvp3"]
+a = Vector2(80, -305)
+b = Vector2(-289, -92)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_lquwl"]
+a = Vector2(-222, 196)
+b = Vector2(-221, -185)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_7mycd"]
+a = Vector2(42, 275)
+b = Vector2(-273, 100)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_272bh"]
+a = Vector2(-37, 275)
+b = Vector2(266, 103)
+
+[node name="Arena" type="Node2D" unique_id=895173904]
+script = ExtResource("1_s2yy1")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=407392398]
+scale = Vector2(1, 1.0038986)
+physics_material_override = SubResource("PhysicsMaterial_0yjnm")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=1249834193]
+shape = SubResource("SegmentShape2D_0xm2m")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=470136148]
+shape = SubResource("SegmentShape2D_h2yge")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D" unique_id=1653146889]
+shape = SubResource("SegmentShape2D_1bvp3")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D" unique_id=804099693]
+shape = SubResource("SegmentShape2D_lquwl")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D" unique_id=2071728676]
+shape = SubResource("SegmentShape2D_7mycd")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="StaticBody2D" unique_id=1501047346]
+shape = SubResource("SegmentShape2D_272bh")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=410371105]
+scale = Vector2(2.0654879, 2.0654879)
+texture = ExtResource("2_dj1tk")

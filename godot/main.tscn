@@ -1,7 +1,13 @@
 [gd_scene format=3 uid="uid://beyblade001"]
 
 [ext_resource type="PackedScene" uid="uid://lu8pufe4b3r" path="res://working_arena (2).tscn" id="1_ig7tw"]
+[ext_resource type="Texture2D" uid="uid://dnves581gwrbn" path="res://assets/hub.jpg" id="2_0xm2m"]
 
 [node name="Main" type="Node2D" unique_id=887933328]
+
+[node name="Hub" type="Sprite2D" parent="." unique_id=972268132]
+position = Vector2(364.00003, 238)
+scale = Vector2(0.6010417, 0.6010417)
+texture = ExtResource("2_0xm2m")
 
 [node name="Arena" parent="." unique_id=895173904 instance=ExtResource("1_ig7tw")]

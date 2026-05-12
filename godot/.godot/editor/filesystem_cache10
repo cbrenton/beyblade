@@ -1,23 +1,24 @@
 63f7b34db8d8cdea90c76aacccf841ec
-::res://::1778614863
+::res://::1778615619
 broken_arena.tscn::PackedScene::2986681276018421954::1778608126::0::1::::<><><>0<>0<><>::uid://bk4sao1xwrmf3::::res://scripts/arena_new.gd<>uid://baf1pqyoaux0s::::res://assets/arena.png
 export_presets.cfg::TextFile::-1::1778602523::0::1::::<><><>0<>0<><>::
 icon.svg::CompressedTexture2D::1913753471732085146::1778602516::1778602566::1::::<><><>0<>0<>eddf2b290c72a11e0674fa6eb160ac05<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
-main.tscn::PackedScene::2350174299237856::1778611964::0::1::::<><><>0<>0<><>::uid://lu8pufe4b3r::::res://working_arena (2).tscn
+main.tscn::PackedScene::2350174299237856::1778615619::0::1::::<><><>0<>0<><>::uid://lu8pufe4b3r::::res://working_arena (2).tscn<>uid://dnves581gwrbn::::res://assets/hub.jpg
 pentagon_arena.tscn::PackedScene::5304065247871775781::1778611786::0::1::::<><><>0<>0<><>::uid://bk4sao1xwrmf3::::res://scripts/arena_new.gd<>uid://dao51e1nx205p::::res://assets/pentagon.png
-player.tscn::PackedScene::4990658976335085586::1778614863::0::1::::<><><>0<>0<><>::uid://dmhd2gqswynwl::::res://assets/top.png<>uid://cyhu7s3bgqsg2::::res://scripts/player.gd
+player.tscn::PackedScene::4990658976335085586::1778615327::0::1::::<><><>0<>0<><>::uid://dmhd2gqswynwl::::res://assets/top.png<>uid://cyhu7s3bgqsg2::::res://scripts/player.gd
 perfectly_round_player.tscn::PackedScene::5905010202005124904::1778614787::0::1::::<><><>0<>0<><>::uid://cyhu7s3bgqsg2::::res://scripts/player.gd<>uid://dmhd2gqswynwl::::res://assets/top.png
 working_arena (2).tscn::PackedScene::23982245328853269::1778610660::0::1::::<><><>0<>0<><>::uid://bk4sao1xwrmf3::::res://scripts/arena_new.gd<>uid://comsp8mdmkhov::::res://assets/hex_arena.png
 ::res://addons/::1778601824
 ::res://addons/rcade/::1778602566
 rcade_input.gd::GDScript::8601570341232054530::1778601887::0::1::::<>Node<><>0<>0<><>::
-::res://assets/::1778614886
+::res://assets/::1778615780
 757.png::CompressedTexture2D::3343574752800021697::1778610889::1778610905::1::::<><><>0<>0<>9236ed75d1caafdc453bdd648f005772<>res://.godot/imported/757.png-b40bbd7c9bca3ecdb6eb6d5421bba6e2.ctex::
 arena.png::CompressedTexture2D::2398348879269719200::1778607685::1778607695::1::::<><><>0<>0<>3d0ef60e16550b6b643033497904bda5<>res://.godot/imported/arena.png-49309fa67fc73d79c5c2bafc8b6bd553.ctex::
-hex_arena.png::CompressedTexture2D::5781379156106694269::1778608224::1778608235::1::::<><><>0<>0<>920d93ea677c812aa9d5b2ecfa137206<>res://.godot/imported/hex_arena.png-6867bc22d178ab4ba895c0f302e3c5f5.ctex::
+hex_arena.png::CompressedTexture2D::5781379156106694269::1778615769::1778615782::1::::<><><>0<>0<>920d93ea677c812aa9d5b2ecfa137206<>res://.godot/imported/hex_arena.png-6867bc22d178ab4ba895c0f302e3c5f5.ctex::
+hub.jpg::CompressedTexture2D::8115345591339606915::1778615529::1778615530::1::::<><><>0<>0<>14ce6fca717dc28a184cf07e408780d8<>res://.godot/imported/hub.jpg-fd635d400d3029664c1d1b6931c4080b.ctex::
 pentagon.png::CompressedTexture2D::7190031530941464023::1778610626::1778610639::1::::<><><>0<>0<>1b05c7136688059a9de2ee0038b0ad4c<>res://.godot/imported/pentagon.png-984d88a9393e4a375127e9203f2837b1.ctex::
 top.png::CompressedTexture2D::8016209527133009419::1778607322::1778607322::1::::<><><>0<>0<>6165c35c09362ba5d490396ccb4b79dd<>res://.godot/imported/top.png-71f42050df5ce65e470fc5e218b1f8f7.ctex::
-::res://assets/beys/::1778614886
+::res://assets/beys/::1778614968
 1.png::CompressedTexture2D::4293349552050414089::1778614886::1778614968::1::::<><><>0<>0<>237a430eba2ff4cca7fee0fd4cb8af96<>res://.godot/imported/1.png-ffe65d0b08e5d5d4d99ad8744766e8d6.ctex::
 2.png::CompressedTexture2D::1021237375773355262::1778614886::1778614968::1::::<><><>0<>0<>4d2cc90e262d869d1690d21f1275cd4a<>res://.godot/imported/2.png-11f7540f689199e13df9cd5c005d3afa.ctex::
 3.png::CompressedTexture2D::4244330702937383269::1778614886::1778614968::1::::<><><>0<>0<>201b2d68ee09a78d02bcba33b6397921<>res://.godot/imported/3.png-9c4ce4b2038a1da1b1085c7b3a1f29a8.ctex::
@@ -67,8 +68,8 @@ loser.mp3::AudioStreamMP3::1255766962563261686::1778611339::1778611450::1::::<><
 p1.mp3::AudioStreamMP3::622488928378728999::1778611339::1778611450::1::::<><><>0<>0<>739cd69add807235f277feadcc6d58d1<>res://.godot/imported/p1.mp3-48ec3192e3056a9a736670e2e9d7714a.mp3str::
 p2.mp3::AudioStreamMP3::7939764455297482709::1778611339::1778611450::1::::<><><>0<>0<>533868a67fd4360c5108811e02af20f4<>res://.godot/imported/p2.mp3-53c2d8a5e105b9c05c4aa3110913463b.mp3str::
 winner.mp3::AudioStreamMP3::5149214928833963549::1778611339::1778611450::1::::<><><>0<>0<>d8e516cde02bd4923ef241c2edc74d89<>res://.godot/imported/winner.mp3-30bbcbe18e324148ea1a40cf9e3cbaf0.mp3str::
-::res://scripts/::1778614958
+::res://scripts/::1778615412
 arena.gd::GDScript::7163912005633027614::1778611339::0::1::::<>StaticBody2D<><>0<>0<><>::
 arena_new.gd::GDScript::3149269757377867966::1778614002::0::1::::<>Node2D<><>0<>0<><>::
-player.gd::GDScript::6473096732966613295::1778614958::0::1::::<>RigidBody2D<><>0<>0<><>::
+player.gd::GDScript::6473096732966613295::1778615412::0::1::::<>RigidBody2D<><>0<>0<><>::
 test.gd::GDScript::616197555254481351::1778611339::0::1::::<>Node2D<><>0<>0<><>::

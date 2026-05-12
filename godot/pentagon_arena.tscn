@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://chtlgdy487i34"]
+
+[ext_resource type="Script" uid="uid://bk4sao1xwrmf3" path="res://scripts/arena_new.gd" id="1_0yjnm"]
+[ext_resource type="Texture2D" uid="uid://dao51e1nx205p" path="res://assets/pentagon.png" id="2_6prbp"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_0yjnm"]
+friction = 0.0
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_h2yge"]
+a = Vector2(-34, -258.9903)
+b = Vector2(256, -58.770874)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_1bvp3"]
+a = Vector2(82, -293.85437)
+b = Vector2(-318, -28.887379)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_lquwl"]
+a = Vector2(-96.54046, 319.4831)
+b = Vector2(-292, -253.0136)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_7mycd"]
+a = Vector2(321, 191.25436)
+b = Vector2(-308, 192.25049)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_272bh"]
+a = Vector2(100, 317.76117)
+b = Vector2(300, -312.78058)
+
+[node name="Arena" type="Node2D" unique_id=895173904]
+script = ExtResource("1_0yjnm")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=407392398]
+scale = Vector2(1, 1.0038986)
+physics_material_override = SubResource("PhysicsMaterial_0yjnm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=470136148]
+shape = SubResource("SegmentShape2D_h2yge")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D" unique_id=1653146889]
+shape = SubResource("SegmentShape2D_1bvp3")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D" unique_id=804099693]
+scale = Vector2(0.9944017, 1.1068547)
+shape = SubResource("SegmentShape2D_lquwl")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D" unique_id=2071728676]
+shape = SubResource("SegmentShape2D_7mycd")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="StaticBody2D" unique_id=1501047346]
+scale = Vector2(1.0038648, 1)
+shape = SubResource("SegmentShape2D_272bh")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=410371105]
+scale = Vector2(0.62247646, 0.62125534)
+texture = ExtResource("2_6prbp")
