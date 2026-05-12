@@ -51,3 +51,5 @@ jobs:
 
       - name: Deploy to RCade
         uses: fcjr/rcade/action-deploy@main
+        with:
+          artifactPath: ./web-export/
