@@ -1,9 +1,4 @@
-res://main.tscn
 res://scripts/arena.gd
-res://player.tscn
-res://scripts/player.gd
-res://scripts/test.gd
 res://scripts/arena_new.gd
-res://working_arena.tscn
-res://pentagon_arena.tscn
-res://working_arena (2).tscn
+res://scripts/player.gd
+res://main.tscn

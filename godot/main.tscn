@@ -20,7 +20,6 @@ win_label = NodePath("../WinLabel")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=381653928]
 stream = ExtResource("3_h2yge")
-autoplay = true
 
 [node name="CollisionPlayer" type="AudioStreamPlayer2D" parent="." unique_id=325508073]
 stream = ExtResource("4_1bvp3")
