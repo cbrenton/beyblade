@@ -9,6 +9,7 @@ var is_live = false
 @onready var animation = %AnimationPlayer
 var should_log = false
 @onready var fuck_with_timer := Timer.new()
+@onready var collision_player = get_parent().get_parent().get_node("CollisionPlayer")
 
 
 func _ready() -> void:
@@ -42,9 +43,11 @@ func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
             var my_loss := total * top_spin_drain * (their_speed / total)
             state.angular_velocity -= signf(state.angular_velocity) * my_loss
             var away := (global_position - other.global_position).normalized()
-            state.linear_velocity += away * collision_knockback * (their_speed / my_speed)
+            var scaler = 2.0
+            state.linear_velocity += away * collision_knockback * (their_speed / my_speed) * scaler
             animation.play("hit")
             print("hit player")
+            collision_player.play()
 
 
 func _physics_process(_delta: float) -> void:
@@ -81,6 +84,7 @@ func _process(_delta: float) -> void:
         freeze = true
         is_live = false
         get_node("Sprite2D").modulate = Color.BLACK
+        print("u lose")
 
 
 func set_color(color: Color) -> void:
