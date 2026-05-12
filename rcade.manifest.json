@@ -1,0 +1,12 @@
+{
+  "$schema": "https://rcade.dev/manifest.schema.json",
+  "name": "beyblade",
+  "display_name": "Beyblade",
+  "description": "Let it rip!",
+  "visibility": "public",
+  "authors": [{ "display_name": "Chris Brenton" }],
+  "dependencies": [
+    { "name": "@rcade/input-classic", "version": "1.0.0" },
+    { "name": "@rcade/input-spinners", "version": "1.0.0" }
+  ]
+}

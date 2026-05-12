@@ -1,0 +1,9 @@
+63f7b34db8d8cdea90c76aacccf841ec
+::res://::1778602622
+export_presets.cfg::TextFile::-1::1778602523::0::1::::<><><>0<>0<><>::
+icon.svg::CompressedTexture2D::1913753471732085146::1778602516::1778602566::1::::<><><>0<>0<>eddf2b290c72a11e0674fa6eb160ac05<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
+main.gd::GDScript::616197555254481351::1778602537::0::1::::<>Node2D<><>0<>0<><>::
+main.tscn::PackedScene::2350174299237856::1778602579::0::1::::<><><>0<>0<><>::uid://i1qximo471nv::::res://main.gd
+::res://addons/::1778601824
+::res://addons/rcade/::1778602566
+rcade_input.gd::GDScript::8601570341232054530::1778601887::0::1::::<>Node<><>0<>0<><>::
