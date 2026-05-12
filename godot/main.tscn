@@ -1,8 +1,7 @@
 [gd_scene format=3 uid="uid://beyblade001"]
 
-[ext_resource type="Script" uid="uid://dacit4gmvaj2u" path="res://scripts/arena.gd" id="2_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://lu8pufe4b3r" path="res://working_arena (2).tscn" id="1_ig7tw"]
 
 [node name="Main" type="Node2D" unique_id=887933328]
 
-[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=407197270]
-script = ExtResource("2_0xm2m")
+[node name="Arena" parent="." unique_id=895173904 instance=ExtResource("1_ig7tw")]

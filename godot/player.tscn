@@ -3,18 +3,68 @@
 [ext_resource type="Texture2D" uid="uid://dmhd2gqswynwl" path="res://assets/top.png" id="1_4flbx"]
 [ext_resource type="Script" uid="uid://cyhu7s3bgqsg2" path="res://scripts/player.gd" id="1_onrkg"]
 
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_onrkg"]
+friction = 0.0
+bounce = 0.06
+
+[sub_resource type="Animation" id="Animation_onrkg"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.97626084, 0.99396753)]
+}
+
+[sub_resource type="Animation" id="Animation_i3pqv"]
+resource_name = "hit"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.099999994, 0.19999999),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.5, 1.5), Vector2(0.982, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hqtel"]
+_data = {
+&"RESET": SubResource("Animation_onrkg"),
+&"hit": SubResource("Animation_i3pqv")
+}
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_onrkg"]
-radius = 26.0
+radius = 26.019224
 
 [node name="RigidBody2D" type="RigidBody2D" unique_id=1472262996]
+scale = Vector2(0.97626084, 0.99396753)
+physics_material_override = SubResource("PhysicsMaterial_onrkg")
 gravity_scale = 0.0
+continuous_cd = 2
+contact_monitor = true
+max_contacts_reported = 1
 angular_damp = 0.1
 script = ExtResource("1_onrkg")
-pull_factor = 100.0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1351414554]
-shape = SubResource("CircleShape2D_onrkg")
+pull_factor = 800.0
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1947290124]
-scale = Vector2(0.8125, 0.8125)
+scale = Vector2(0.8125, 0.8076077)
 texture = ExtResource("1_4flbx")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1102566575]
+unique_name_in_owner = true
+libraries/ = SubResource("AnimationLibrary_hqtel")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=244985989]
+shape = SubResource("CircleShape2D_onrkg")
