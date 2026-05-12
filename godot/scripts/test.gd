@@ -15,7 +15,7 @@ func _ready() -> void:
 	bg.color = Color(0.05, 0.05, 0.1)
 	bg.size = Vector2(480, 270)
 	# Children draw after the parent's _draw(); without this the rect covers the discs.
-	bg.show_behind_parent = true
+	# bg.show_behind_parent = true
 	add_child(bg)
 
 	_label = Label.new()
