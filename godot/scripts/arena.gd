@@ -86,7 +86,7 @@ func _process(delta: float) -> void:
                 _time_till_battle_left = TIME_TILL_BATTLE_SEC
                 _instruction_label.visible = false
                 _countdown_label.add_theme_font_size_override("font_size", 28)
-                _countdown_label.text = "P1: %d spins\nP2: %d spins" % [_p1_spins, _p2_spins]
+                _countdown_label.text = "P1: %d full spins\nP2: %d full spins" % [_p1_spins / 64.0, _p2_spins / 64.0]
         _Overlay.READY_FOR_BATTLE:
             _time_till_battle_left -= delta
             if _time_till_battle_left <= 0.0:
